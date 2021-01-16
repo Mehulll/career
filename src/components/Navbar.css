@@ -1,0 +1,26 @@
+.link1{
+    padding-left:40px;
+    padding-right: 30px;
+    color:aqua;
+}
+
+.link1:hover{
+    color:aqua;
+}
+
+.link2{
+    color:aqua;
+    padding-right: 30px;
+}
+
+.link2:hover{
+    color:aqua;
+}
+
+.link3{
+    color:aqua;
+}
+
+.link3:hover{
+    color:aqua;
+}
