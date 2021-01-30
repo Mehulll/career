@@ -19,8 +19,15 @@
 
 .link3{
     color:aqua;
+    padding-right:30px;
 }
 
 .link3:hover{
     color:aqua;
 }
+
+.form1{
+    margin-right: 30px;
+}
+
+

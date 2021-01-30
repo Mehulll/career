@@ -7,7 +7,7 @@ function List() {
         <div>
             <p className = "p100"> List of Career</p>
             <ul className = "ul1">
-            <li><Link to = "/astronaut" >Astronaut</Link></li>
+            <li><Link to = "/astronaut">Astronaut</Link></li>
             </ul>
         </div>
        
