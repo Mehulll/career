@@ -10,6 +10,7 @@ import './Navbar.css'
 
 var re = [];
 var ok = false;
+
 export class Navs extends Component{
     constructor(props){
       super(props);
