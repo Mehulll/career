@@ -40,7 +40,7 @@ export class Navs extends Component{
     event.preventDefault();
     this.state.results=[]
     // console.log(payload);
-    axios.get('http://localhost:5000/api/UserModel/search?name=' + this.state.search  )
+    axios.get('/api/UserModel/search?name=' + this.state.search  )
       .then((response) => {
         const data = response.data;
         this.setState({results:data});
