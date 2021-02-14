@@ -24,6 +24,5 @@
     "morgan": "^1.10.0",
     "react-router-dom": "^4.4.0-beta.8",
     "react-scripts": "^4.0.2"
-  },
-  "proxy": "https://localhost:5000"
+  }
 }
