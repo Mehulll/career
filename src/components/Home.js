@@ -1,7 +1,8 @@
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-function Home() {
+import { connect } from 'react-redux'
+const Home = ({isAuthenticated})  => {
   return (        
     <div className = "div1">
     <div className = "div2">
@@ -22,4 +23,11 @@ function Home() {
   );
 }
 
-export default Home;
+const mapDispatchtoProps = (state) => {
+  return {
+    isAuthenticated : state.auth.isAuthenticated
+  }
+}
+
+
+export default connect(mapDispatchtoProps)(Home);

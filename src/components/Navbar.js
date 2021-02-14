@@ -7,11 +7,12 @@ import FormControl from 'react-bootstrap/FormControl'
 import {Link,Redirect} from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css' 
+import { connect } from 'react-redux'
 
-var re = [];
+var re = []
 var ok = false;
-
-export class Navs extends Component{
+var why;
+class Navs extends Component{
     constructor(props){
       super(props);
          this.state = {
@@ -21,7 +22,9 @@ export class Navs extends Component{
     }
   // componentDidMount = () => {
   //   this.getData();
-  // };
+  // };  logout = () => {
+
+  
 
   hangleGet = (event) => {
     const target = event.target;
@@ -77,6 +80,7 @@ export class Navs extends Component{
       }
       props=[]
     }
+    why = this.state.search;
     // return null;
   }
  
@@ -93,6 +97,8 @@ export class Navs extends Component{
           <Link className = "link1" to = "/">Home</Link>
           <Link className = "link2" to = "/list">List</Link>
           <Link className = "link3" to = "/about">About</Link>
+          <Link className = "link4" to = "/signup">Signup</Link>
+          <Link className = "link5" to = "/login">Login</Link>
       </Nav>
       <Form inline className = 'form1' onKeyUp={this.getData}>
         <FormControl name = "search" value = {this.state.title} onChange={this.hangleGet} type="text" placeholder="Search" className="mr-sm-2" />
@@ -115,15 +121,24 @@ export class Navs extends Component{
   };
 }
 
+
+
+
+
 export function Results(){
       return(
         <div>
           {re.map(Name => <div><li><Link to = {`/${Name}`} >{Name}</Link></li></div>)}
+          {why.length == 0 && 
+              <Redirect to = {{
+                pathname : '/home',
+              }}/>
+          }
           {re=[]}
           {ok = false}
         </div>
       )
 }
 
-// export default Navs;
+export default connect(null)(Navs);
 // export {Navs,Results};

@@ -5,7 +5,8 @@ const URI ="mongodb+srv://MehulJ:2300900M@cluster0.bix28.mongodb.net/careers?ret
 const connectDB = async () => {
   await mongoose.connect(process.env.MONGODB_URI || URI, {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex:true
   });
   console.log('db connected..!');
 };

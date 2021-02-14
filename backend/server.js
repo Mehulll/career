@@ -16,7 +16,7 @@ app.use('/api/userModel', require('./Api/User'));
 const Port = process.env.Port || 5000;
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('build'));
+    app.use(express.static('../build'));
 }
 
 app.listen(Port, () => console.log('Server started'));
