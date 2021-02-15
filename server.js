@@ -9,7 +9,7 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 
-if(process.env.NODE_ENV === 'development') {
+if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client', 'build')));
   console.log('ahello')
 
@@ -25,7 +25,6 @@ app.use(morgan('tiny'))
 app.use('/api/userModel', require('./Api/User'));
 // app.use(cors());
 const Port = process.env.Port || 5000;
-console.log('bad')
 // console.log(process.env)
 
 app.listen(Port, () => console.log(`Server started ${Port}`));
